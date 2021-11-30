@@ -188,7 +188,8 @@ class Model(AbstractBase):
             Person
 
         """
-        person = Person(**kwargs)
+        if person is None:
+            person = Person(**kwargs)
         self += person
         return person
 
